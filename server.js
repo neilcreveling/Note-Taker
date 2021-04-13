@@ -14,3 +14,11 @@ const PORT = process.env.PORT || 8000;
 // sets up the express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// serves static files, creates public directory
+app.use(express.static(path.join(__dirname, "public")));
+
+
+
+// starts server to begin listening
+app.listen(PORT, () => console.log(`App listening on PORT: http://${PORT}`);
