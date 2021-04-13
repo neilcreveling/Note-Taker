@@ -7,3 +7,6 @@ const db = require('./db/db.json');
 // uuid - used to give each note a unique id when saved
 const { v4: uuidv4 } = require('uuid');
 
+// sets up express app
+const app = express()
+const PORT = process.env.PORT || 8000;
