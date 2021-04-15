@@ -1,11 +1,13 @@
 // dependencies
 const fs = require('fs');
 const express = require('express');
-const db = require('./db/db.json');
+const db = require('./Develop/db/db.json');
+const path = require('path');
+
 
 // sets up express app
 const app = express()
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3030;
 
 // sets up the express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -21,4 +23,4 @@ require('./routes/htmlRoutes')(app);
 
 
 // starts server to begin listening
-app.listen(PORT, () => console.log(`App listening on PORT: http://${PORT}`);
+app.listen(PORT, () => console.log(`App listening on PORT: http://${PORT}`));
