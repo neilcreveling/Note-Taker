@@ -23,4 +23,14 @@ module.exports = (app) => {
         });
         res.json('Successfully posted new note!');
     });
+
+    app.delete('/api/notes/:id'), (req, res) => {
+        console.log(req.params.id);
+        const newDB = db.filter((deleteNote) => deletedNote.id != req.params.id);
+        fs.writeFile('../Develop/db/db.json', JSON.stringify(newDB), (err) => {
+            if(err) throw err;
+        });
+        console.log('The note was successfully deleted!');
+        res.json('success');
+    });
 }
