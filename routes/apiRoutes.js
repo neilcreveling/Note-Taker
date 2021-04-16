@@ -32,5 +32,5 @@ module.exports = (app) => {
         });
         console.log('The note was successfully deleted!');
         res.json('success');
-    });
+    };
 }

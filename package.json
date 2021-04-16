@@ -1,0 +1,31 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "An application that can write and save notes.",
+  "main": "server.js",
+  "dependencies": {
+    "ajax": "^0.0.4",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.7"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilcreveling/Note-Taker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neilcreveling/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/neilcreveling/Note-Taker#readme"
+}
