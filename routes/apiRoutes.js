@@ -1,6 +1,6 @@
 // dependencies
 const fs = require('fs');
-const db = require('./db/db.json');
+const db = require('../db/db.json');
 
 // uuid - used to give each note a unique id when saved
 const { v4: uuidv4 } = require('uuid');
@@ -14,14 +14,16 @@ module.exports = (app) => {
         console.log('Note received!');
         const newNote = req.body;
         newNote.id = uuidv4();
-        fs.readFile('../db/db.json', function(err, data) {
-            var list = JSON.parse(data);
-            list.push(newNote);
-            fs.writeFile('../db/db.json', JSON.jstringify(list), function (err) {
-                if (err) throw err;
+        console.log(newNote.id);
+        db.push(newNote);
+        console.log(
+            `'title': '${newNote.title}', 'text': '${newNote.text}' 'id': '${newNote.id}' posted to db.json`
+        );
+        fs.writeFile('../db/db.json', JSON.jstringify(db), (err) => {
+            if (err) throw err;
+            console.log('Posted new note')
             });
-        });
-        res.json('Successfully posted new note!');
+        res.json(newNote);
     });
 
     app.delete('/api/notes/:id'), (req, res) => {
