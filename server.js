@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // serves static files, creates public directory
-app.use(express.static(path.join(__dirname + 'public')));
+app.use(express.static(path.join(__dirname + '/public')));
 
 // routes
 require('./routes/apiRoutes')(app);
